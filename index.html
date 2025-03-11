@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación cuadrado</title>
+    <title>Animación cuadrado con gatito y música</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cuadrado"></div>
+    <!-- Botón de "PLAY, LISTEN AND CHILL" más grande y más arriba -->
+    <button id="playButton">PLAY, LISTEN AND CHILL</button>
+
+    <!-- Reproductor de música (sin autoplay) -->
+    <audio id="audio" loop>
+        <source src="atlantis.mp3" type="audio/mp3">
+        Tu navegador no soporta la etiqueta de audio.
+    </audio>
+
+    <!-- Cuadrado con animación -->
+    <div class="cuadrado">
+        <!-- Gatito fuera del cuadrado, moviéndose aleatoriamente -->
+        <img src="cani-removebg-preview.png" class="gatito" alt="Gatito">
+    </div>
+
+    <script>
+        // Reproducir música al hacer clic en el botón PLAY
+        const playButton = document.getElementById('playButton');
+        const audio = document.getElementById('audio');
+        
+        playButton.addEventListener('click', function() {
+            audio.play();
+            playButton.style.display = 'none';  // Ocultar el botón una vez que la música suena
+        });
+    </script>
 </body>
 </html>
